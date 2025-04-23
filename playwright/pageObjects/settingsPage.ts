@@ -3,10 +3,6 @@ import { Page } from "@playwright/test";
 
 export class SettingsPage extends HelperBase {
 
-  constructor(page: Page) {
-    super(page);
-  }
-
   firstName = this.page.getByPlaceholder("First Name");
   lastName = this.page.getByPlaceholder("Last Name");
   email = this.page.getByPlaceholder("Email");

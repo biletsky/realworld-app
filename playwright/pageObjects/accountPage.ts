@@ -1,11 +1,11 @@
 import { HelperBase } from "./helperBase";
-import { Page } from "@playwright/test";
 
 export class AccountPage extends HelperBase {
 
-  constructor(page: Page) {
-    super(page);
-  }
+  userSettings = this.page.locator("[data-test=sidenav-user-settings]");
+  userName = this.page.locator("[data-test=sidenav-username]");
+  transactionDetailHeader = this.page.locator("[data-test=transaction-detail-header]");
+  userBalance = this.page.locator("[data-test=sidenav-user-balance]");
 
   async clickAccountDetailsLink() {
     await this.page.getByText('My account').click();

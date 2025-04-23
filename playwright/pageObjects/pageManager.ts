@@ -16,11 +16,11 @@ export class PageManager extends HelperBase{
 
     constructor(page: Page) {
         super(page);
-        this.signUp = new SignUpPage(this.page);
-        this.signIn = new SignInPage(this.page);
-        this.account = new AccountPage(this.page);
-        this.settings = new SettingsPage(this.page);
-        this.bankAccount = new BankAccountPage(this.page);
+        this.signUp = new SignUpPage(page);
+        this.signIn = new SignInPage(page);
+        this.account = new AccountPage(page);
+        this.settings = new SettingsPage(page);
+        this.bankAccount = new BankAccountPage(page);
     }
 
     get signInPage(): SignInPage {

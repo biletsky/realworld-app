@@ -1,11 +1,7 @@
 import { HelperBase } from "./helperBase";
-import { Page, expect } from "@playwright/test";
+import { expect } from "@playwright/test";
 
 export class BankAccountPage extends HelperBase {
-
-  constructor(page: Page) {
-    super(page);
-  }
 
   async clickCreateButton() {
     await this.page.getByRole('button', {name: 'Create'}).click();

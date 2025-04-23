@@ -135,12 +135,12 @@
     {
       "id": "h2CvoBsTn",
       "uuid": "a0211c02-9d63-4b07-a32b-6a12f0fa08f1",
-      "firstName": "Jack",
-      "lastName": "Lowrence",
+      "firstName": "Francesca",
+      "lastName": "Lia",
       "username": "TestUser",
       "password": "$2a$10$WaAku/Rdwgaoh9pAXtrBwO/DS3ZcWx1cD8i6EsODuLw.UHlfD5nkC",
-      "email": "123@ae.com",
-      "phoneNumber": "123123564",
+      "email": "Prudence_Spinka@hotmail.com",
+      "phoneNumber": "1234567890",
       "balance": 0,
       "createdAt": "2025-04-18T12:58:00.368Z",
       "modifiedAt": "2025-04-18T12:58:00.368Z"
@@ -188,6 +188,28 @@
       "balance": 0,
       "createdAt": "2025-04-23T15:46:07.369Z",
       "modifiedAt": "2025-04-23T15:46:07.369Z"
+    },
+    {
+      "id": "xvgioKVfo",
+      "uuid": "66463112-0308-4869-a39b-938ef965ad47",
+      "firstName": "Marianna",
+      "lastName": "Grimes",
+      "username": "function () { [native code] }_function () { [native code] }",
+      "password": "$2a$10$F4RoYd7AB.gaIofFW346DegLb88zMCnuNVRs/rLTx5AaMvruaH6hC",
+      "balance": 0,
+      "createdAt": "2025-04-23T16:08:28.824Z",
+      "modifiedAt": "2025-04-23T16:08:28.824Z"
+    },
+    {
+      "id": "dPxRhJJCq",
+      "uuid": "2ee0d18e-b38d-45e3-98a6-094901173fc0",
+      "firstName": "Chelsey",
+      "lastName": "Jorge",
+      "username": "Sigmund_Federico",
+      "password": "$2a$10$bAufs59teWyw0SiUbJggmO07CJ7dwvys5C90YrhiVPZryeEOilrqC",
+      "balance": 0,
+      "createdAt": "2025-04-23T16:25:50.575Z",
+      "modifiedAt": "2025-04-23T16:25:50.575Z"
     }
   ],
   "contacts": [
@@ -1159,6 +1181,61 @@
       "isDeleted": true,
       "createdAt": "2025-04-23T15:19:11.666Z",
       "modifiedAt": "2025-04-23T15:19:11.666Z"
+    },
+    {
+      "id": "lD-gYQCnN",
+      "uuid": "1d09e9a3-6e8b-440d-9971-67810edeb215",
+      "userId": "h2CvoBsTn",
+      "bankName": "Streich, Dietrich and Auer",
+      "accountNumber": "123123123",
+      "routingNumber": "123123123",
+      "isDeleted": true,
+      "createdAt": "2025-04-23T16:05:03.371Z",
+      "modifiedAt": "2025-04-23T16:05:03.371Z"
+    },
+    {
+      "id": "NmPweTTWX",
+      "uuid": "02806ae6-e173-44eb-bda2-d2ee6b26a3ed",
+      "userId": "h2CvoBsTn",
+      "bankName": "Beer, Altenwerth and Wilderman",
+      "accountNumber": "123123123",
+      "routingNumber": "123123123",
+      "isDeleted": true,
+      "createdAt": "2025-04-23T16:06:55.576Z",
+      "modifiedAt": "2025-04-23T16:06:55.576Z"
+    },
+    {
+      "id": "l_yDswW-r",
+      "uuid": "ef6068c3-7916-4696-a869-cf95dbafe181",
+      "userId": "h2CvoBsTn",
+      "bankName": "Muller Group",
+      "accountNumber": "121212122",
+      "routingNumber": "1232134er",
+      "isDeleted": true,
+      "createdAt": "2025-04-23T16:09:30.368Z",
+      "modifiedAt": "2025-04-23T16:09:30.368Z"
+    },
+    {
+      "id": "GOjyWcSir",
+      "uuid": "30224b07-dfed-417d-adc3-24b05842bf8a",
+      "userId": "h2CvoBsTn",
+      "bankName": "Beer LLC",
+      "accountNumber": "123123123",
+      "routingNumber": "123123123",
+      "isDeleted": true,
+      "createdAt": "2025-04-23T16:30:42.384Z",
+      "modifiedAt": "2025-04-23T16:30:42.384Z"
+    },
+    {
+      "id": "6iLz67mcF",
+      "uuid": "d466cc41-d6bb-43fc-89ef-24a08dfd4af8",
+      "userId": "h2CvoBsTn",
+      "bankName": "Morissette - Torp",
+      "accountNumber": "123123123",
+      "routingNumber": "123123123",
+      "isDeleted": true,
+      "createdAt": "2025-04-23T16:31:05.530Z",
+      "modifiedAt": "2025-04-23T16:31:05.530Z"
     }
   ],
   "transactions": [
@@ -11028,6 +11105,15 @@
       "transactionId": "4AvM8cN1DdS",
       "createdAt": "2025-04-23T15:18:24.783Z",
       "modifiedAt": "2025-04-23T15:18:24.783Z"
+    },
+    {
+      "id": "GtHfwnK9oj",
+      "uuid": "ea7ffb6b-5844-449e-95ee-05418d3f00c7",
+      "content": "Officia est enim.\nAutem doloribus nobis sunt id laborum.",
+      "userId": "h2CvoBsTn",
+      "transactionId": "4AvM8cN1DdS",
+      "createdAt": "2025-04-23T16:09:30.651Z",
+      "modifiedAt": "2025-04-23T16:09:30.651Z"
     }
   ],
   "notifications": [
@@ -11570,6 +11656,26 @@
       "isRead": false,
       "createdAt": "2025-04-23T15:18:24.799Z",
       "modifiedAt": "2025-04-23T15:18:24.799Z"
+    },
+    {
+      "id": "SUmUnBotl7",
+      "uuid": "c929b47f-457e-4662-9733-aa3045ba257e",
+      "userId": "qywYp6hS0U",
+      "transactionId": "4AvM8cN1DdS",
+      "commentId": "GtHfwnK9oj",
+      "isRead": false,
+      "createdAt": "2025-04-23T16:09:30.660Z",
+      "modifiedAt": "2025-04-23T16:09:30.660Z"
+    },
+    {
+      "id": "VxU76lmjI6",
+      "uuid": "689e1195-361c-4d06-9186-bb890c04508b",
+      "userId": "bDjUb4ir5O",
+      "transactionId": "4AvM8cN1DdS",
+      "commentId": "GtHfwnK9oj",
+      "isRead": false,
+      "createdAt": "2025-04-23T16:09:30.689Z",
+      "modifiedAt": "2025-04-23T16:09:30.689Z"
     }
   ],
   "banktransfers": [

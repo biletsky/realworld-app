@@ -1,11 +1,6 @@
 import { HelperBase } from "./helperBase";
-import { Page } from "@playwright/test";
 
 export class SignUpPage extends HelperBase {
-
-  constructor(page: Page) {
-    super(page);
-  }
 
   async fillTheSignUpForm(firstName: string, lastName: string, userName: string, password: string, confirmPassword: string) {
     await this.page.getByLabel("First Name").fill(firstName);
