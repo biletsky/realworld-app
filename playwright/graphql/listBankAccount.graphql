@@ -1,0 +1,13 @@
+query ListBankAccount {
+    listBankAccount {
+        id
+        uuid
+        userId
+        bankName
+        accountNumber
+        routingNumber
+        isDeleted
+        createdAt
+        modifiedAt
+    }
+}

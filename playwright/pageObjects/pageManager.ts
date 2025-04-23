@@ -1,0 +1,46 @@
+import {Page} from "@playwright/test";
+import {SignUpPage} from "./signUpPage";
+import { SignInPage } from "./signInPage";
+import { AccountPage } from "./accountPage";
+import { SettingsPage } from "./settingsPage";
+import { BankAccountPage } from "./bankAccountPage";
+import { HelperBase } from "./helperBase";
+
+export class PageManager extends HelperBase{
+
+    private readonly signUp: SignUpPage;
+    private readonly signIn: SignInPage;
+    private readonly account: AccountPage;
+    private readonly settings: SettingsPage;
+    private readonly bankAccount: BankAccountPage;
+
+    constructor(page: Page) {
+        super(page);
+        this.signUp = new SignUpPage(this.page);
+        this.signIn = new SignInPage(this.page);
+        this.account = new AccountPage(this.page);
+        this.settings = new SettingsPage(this.page);
+        this.bankAccount = new BankAccountPage(this.page);
+    }
+
+    get signInPage(): SignInPage {
+        return this.signIn;
+    }
+
+    get signUpPage(): SignUpPage {
+        return this.signUp;
+    }
+
+    get accountPage(): AccountPage {
+        return this.account;
+    }
+
+    get settingsPage(): SettingsPage {
+        return this.settings;
+    }
+
+    get bankAccountPage(): BankAccountPage {
+        return this.bankAccount;
+    }
+
+}
