@@ -34,9 +34,9 @@ test.describe("api tests", () => {
   test("Create and delete bank", async ({ page }) => {
     const bankName = faker.company.companyName();
     const pm = new PageManager(page);
-    const createBankAccountQueryPath = "createBankAccount.graphql";
-    const deleteBankAccountMutationPath = "deleteBankAccount.graphql";
-    const listBankAccountPath = "listBankAccount.graphql";
+    const createBankAccountQueryPath = "../graphql/createBankAccount.graphql";
+    const deleteBankAccountMutationPath = "../graphql/deleteBankAccount.graphql";
+    const listBankAccountPath = "../graphql/listBankAccount.graphql";
 
     //Create new bank account
     const createPayload = {

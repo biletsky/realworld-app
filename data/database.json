@@ -1236,6 +1236,17 @@
       "isDeleted": true,
       "createdAt": "2025-04-23T16:31:05.530Z",
       "modifiedAt": "2025-04-23T16:31:05.530Z"
+    },
+    {
+      "id": "kf__5GfUr",
+      "uuid": "f69cb926-df5f-43d2-80c9-acd7b2a8de4c",
+      "userId": "h2CvoBsTn",
+      "bankName": "Collins Inc",
+      "accountNumber": "121212122",
+      "routingNumber": "1232134er",
+      "isDeleted": true,
+      "createdAt": "2025-04-24T16:17:49.432Z",
+      "modifiedAt": "2025-04-24T16:17:49.432Z"
     }
   ],
   "transactions": [

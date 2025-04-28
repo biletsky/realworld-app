@@ -16,7 +16,7 @@ export class HelperBase {
   }
 
   async loadGraphQL(filePath: string): Promise<string> {
-    const absolutePath = path.join("/Users/vbiletsky/IdeaProjects/realworld-app/playwright/graphql/", filePath);
+    const absolutePath = path.join(__dirname, filePath);
     const buffer = await fs.readFile(absolutePath, "utf-8");
     return buffer.toString();
   }
@@ -42,3 +42,4 @@ export class HelperBase {
   }
 
 }
+
