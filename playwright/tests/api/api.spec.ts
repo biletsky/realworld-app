@@ -1,11 +1,12 @@
-import { expect, test } from "@playwright/test";
-import { PageManager } from "../../pageObjects/pageManager";
+import { expect } from "@playwright/test";
+import { test } from "../../fixtures/base";
 import faker from "@faker-js/faker";
 
 
 test.describe("api tests", () => {
 
   const url = "http://localhost:3002";
+  const headers = { "Content-Type": "application/json" };
 
   test.beforeEach(async ({ page }) => {
     const response = await page.request.post(url + "/login", {
@@ -14,15 +15,13 @@ test.describe("api tests", () => {
         "username": "TestUser",
         "password": "123123",
       },
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: headers,
     });
     expect(response.status()).toBe(200);
   });
 
 
-  test("Gets a list of bank accounts for user", async ({ page }) => {
+  test("Gets a list of bank accounts for user", async ({ page}) => {
     const response = await page.request.get(url + "/bankAccounts");
     const responseBody = await response.json();
     console.log(response);
@@ -31,9 +30,8 @@ test.describe("api tests", () => {
     expect(responseBody.results[0].bankName).toBe("Test_Bank");
   });
 
-  test("Create and delete bank", async ({ page }) => {
+  test("Create and delete bank", async ({ page, pageManager }) => {
     const bankName = faker.company.companyName();
-    const pm = new PageManager(page);
     const createBankAccountQueryPath = "../graphql/createBankAccount.graphql";
     const deleteBankAccountMutationPath = "../graphql/deleteBankAccount.graphql";
     const listBankAccountPath = "../graphql/listBankAccount.graphql";
@@ -41,7 +39,7 @@ test.describe("api tests", () => {
     //Create new bank account
     const createPayload = {
       "operationName": "CreateBankAccount",
-      "query": await pm.loadGraphQL(createBankAccountQueryPath),
+      "query": await pageManager.loadGraphQL(createBankAccountQueryPath),
       "variables": {
         "userId": "h2CvoBsTn",
         "bankName": bankName,
@@ -52,13 +50,10 @@ test.describe("api tests", () => {
 
     const createResponse = await page.request.post(url + "/graphql", {
       data: createPayload,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: headers,
     });
 
 
-    expect(createResponse.ok()).toBeTruthy();
     expect(createResponse.status()).toBe(200);
     const createBody = await createResponse.json();
     console.log(createBody);
@@ -70,7 +65,7 @@ test.describe("api tests", () => {
     //Delete bank account
     const deletePayload = {
       "operationName": "DeleteBankAccount",
-      "query": await pm.loadGraphQL(deleteBankAccountMutationPath),
+      "query": await pageManager.loadGraphQL(deleteBankAccountMutationPath),
       "variables": {
         "id": bankAccountId,
       },
@@ -78,12 +73,9 @@ test.describe("api tests", () => {
 
     const deleteResponse = await page.request.post(url + "/graphql", {
       data: deletePayload,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: headers,
     });
 
-    expect(deleteResponse.ok()).toBeTruthy();
     expect(deleteResponse.status()).toBe(200);
 
     const deleteBody = await deleteResponse.json();
@@ -94,17 +86,14 @@ test.describe("api tests", () => {
     //Check the bank account list
     const bankAccountList = {
       "operationName": "ListBankAccount",
-      "query": await pm.loadGraphQL(listBankAccountPath),
+      "query": await pageManager.loadGraphQL(listBankAccountPath),
     };
 
     const bankAccountListResponse = await page.request.post(url + "/graphql", {
       data: bankAccountList,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: headers,
     });
 
-    expect(bankAccountListResponse.ok()).toBeTruthy();
     expect(bankAccountListResponse.status()).toBe(200);
     const bankAccountListBody = await bankAccountListResponse.json();
     expect(bankAccountListBody.data.listBankAccount.find(bank => bank.bankName === bankName).isDeleted).toBe(true);
@@ -132,14 +121,13 @@ test.describe("api tests", () => {
 
   test("Creates a new comment for a transactions", async ({ page }) => {
     const content = faker.lorem.lines();
-    const response = await page.request.post(url + "/comments/4AvM8cN1DdS", {
-      data: {
+    const data = {
       "transactionId": "4AvM8cN1DdS",
-      "content": content
-      },
-      headers: {
-        "Content-Type": "application/json",
-      },
+      "content": content,
+    };
+    const response = await page.request.post(url + "/comments/4AvM8cN1DdS", {
+      data: data,
+      headers: headers,
     });
     console.log(response);
     expect(response.status()).toBe(200);
