@@ -4,6 +4,7 @@ import { SignInPage } from "./signInPage";
 import { AccountPage } from "./accountPage";
 import { SettingsPage } from "./settingsPage";
 import { BankAccountPage } from "./bankAccountPage";
+import { UploadDownloadPage } from "./uploadDownloadPage";
 import { HelperBase } from "./helperBase";
 
 export class PageManager extends HelperBase{
@@ -13,6 +14,7 @@ export class PageManager extends HelperBase{
     private readonly account: AccountPage;
     private readonly settings: SettingsPage;
     private readonly bankAccount: BankAccountPage;
+    private readonly uploadDownload: UploadDownloadPage;
 
     constructor(page: Page) {
         super(page);
@@ -21,6 +23,7 @@ export class PageManager extends HelperBase{
         this.account = new AccountPage(page);
         this.settings = new SettingsPage(page);
         this.bankAccount = new BankAccountPage(page);
+        this.uploadDownload = new UploadDownloadPage(page);
     }
 
     get signInPage(): SignInPage {
@@ -41,6 +44,10 @@ export class PageManager extends HelperBase{
 
     get bankAccountPage(): BankAccountPage {
         return this.bankAccount;
+    }
+
+    get uploadDownloadPage(): UploadDownloadPage {
+        return this.uploadDownload;
     }
 
 }
